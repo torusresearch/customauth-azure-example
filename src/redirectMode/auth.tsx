@@ -19,23 +19,30 @@ class RedirectAuth extends React.Component<IProps, IState> {
   }
 
   async componentDidMount() {
+    // Get the token from the url
     const idToken = new URLSearchParams(window.location.search).get("token");
     console.log(idToken);
+
+    // Get the sub from the token, to be used in the getTorusKey function
     const base64Url = (idToken as string).split(".")[1];
     const base64 = base64Url.replace("-", "+").replace("_", "/");
     const idTokenPayload = JSON.parse(window.atob(base64 || ""));
     const { sub } = idTokenPayload;
 
-    const torusdirectsdk = new TorusSdk({
-      baseUrl: window.location.origin,
-      redirectPathName: "auth",
-      enableLogging: true,
-      uxMode: "redirect",
-      network: "sapphire_devnet",
-      web3AuthClientId: "torus-default",
+    // Create a new instance of TorusSdk
+    const customAuth = new TorusSdk({
+      baseUrl: window.location.origin, // base url of the application
+      redirectPathName: "auth", // redirect path name
+      enableLogging: true, // enable logging for debugging purposes
+      enableOneKey: true, // enable one key
+      uxMode: "redirect", // ux mode for the sdk
+      network: "sapphire_devnet", // web3auth network
+      web3AuthClientId: "WEB3AUTH_CLIENT_ID", // Get it from https://dashboard.web3auth.io
     } as any);
 
-    const loginDetails: any = await torusdirectsdk.getTorusKey("w3a-azure-b2c", sub, { verifier_id: sub }, idToken as string);
+    const verifier = "w3a-azure-b2c"; // verifier name, Get it from https://dashboard.web3auth.io
+
+    const loginDetails: any = await customAuth.getTorusKey(verifier, sub, { verifier_id: sub }, idToken as string);
     this.setState({
       loginDetails,
     });
