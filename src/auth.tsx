@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "./App.css";
 import TorusSdk from "@toruslabs/customauth";
 import ReactJsonView from "react-json-view";
 import { Link } from "react-router-dom";

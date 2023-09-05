@@ -2,7 +2,7 @@ import "./App.css";
 
 import { Route, Switch } from "react-router-dom";
 
-import RedirectResultHandler from "./redirectMode/auth";
+import RedirectResultHandler from "./auth";
 
 import HomePage from "./App";
 

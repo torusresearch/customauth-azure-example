@@ -37,4 +37,4 @@ This example shows how to use the CustomAuth SDK with Azure AD B2C.
 
 ### Flow Diagram
 
-![Flow Diagram)](https://github-production-user-asset-6210df.s3.amazonaws.com/6962565/265612033-16b21c2d-86e8-45dd-8e65-3a21be2f0ce4.png)
+![Flow Diagram](https://github.com/torusresearch/customauth-azure-example/assets/6962565/3362da09-6497-47cb-80bf-f9b465800a54)
