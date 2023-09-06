@@ -8,25 +8,35 @@ This example shows how to use the CustomAuth SDK with Azure AD B2C.
 - [Node.js](https://nodejs.org/en/) version 16
 
 ## Azure B2C Setup
-In this example, since the azure account is already setup to run the code.
-But if you want your own Azure B2C AD setup, refer to this guide.
 
-1. Create and setup your own tenant
-https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/create-new-tenant
+This example assumes that the Azure account is already set up to run the code. However, if you wish to establish your own Azure B2C AD setup, please refer to the following formalized steps for guidance.
 
-2. Change the AD (Active Directory) and make a new app registration
-add redirect uri which can be compatible with this application
-https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=app-reg-ga
+1. Create and Set Up Your Own Tenant:
 
-3. Set up the user flow. In this example we used the signup & signin flow.
-https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows?pivots=b2c-user-flow
+- Follow the instructions outlined in the official Microsoft Azure documentation to create and set up your own Azure Active Directory tenant: [Create New Tenant](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/create-new-tenant)
 
-4. If you want to add more identity providers besides google (for example facebook, etc..) refer to this as well
-https://learn.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-facebook?pivots=b2c-user-flow
+2. Change the Active Directory (AD) and Register a New Application:
 
-5. Now it's good to go, you can get the code grant flow endpoint refering to this document
-if you want to use your own endpoint instead of the one in example app, change the domain at src/constants/index.tsx
-https://learn.microsoft.com/en-us/azure/active-directory-b2c/authorization-code-flow
+- After setting up your tenant, proceed to create a new application registration in your Azure B2C AD.
+- Ensure that you add a redirect URI that is compatible with the application you are developing.
+- Refer to the official documentation for detailed guidance on creating and configuring an application registration:
+  [Tutorial: Register Applications](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=app-reg-ga)
+
+3. Set Up the User Flow:
+
+- Configure user flows within your Azure B2C AD. In this example, we have used the signup and sign in flow.
+- Follow the documentation to create user flows: [Tutorial: Create User Flows](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows?pivots=b2c-user-flow)
+
+4. Adding Additional Identity Providers:
+
+- If you wish to incorporate identity providers other than Google (e.g., Facebook, etc.), you can refer to the relevant documentation for guidance: [Identity Provider - Facebook](https://learn.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-facebook?pivots=b2c-user-flow)
+
+5. Accessing the Code Grant Flow Endpoint:
+
+- Your Azure B2C setup is now ready to use. To obtain the code grant flow endpoint, refer to the official documentation: [Authorization Code Flow](https://learn.microsoft.com/en-us/azure/active-directory-b2c/authorization-code-flow)
+- If you intend to use your own endpoint instead of the one provided in the example application, make the necessary adjustments in the src/constants/index.tsx file.
+
+By following these steps, you will have successfully set up your Azure B2C AD for your specific application needs.
 
 ## Repository Setup
 
